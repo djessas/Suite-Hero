@@ -2,7 +2,13 @@
 
 
 //  LocalStorage
+function saveToLocalStorage(heroes) {
+    localStorage.setItem("heroes", JSON.stringify(heroes));
+}
 
+function getFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("heroes"));
+}
 
 // Afficher les héros
 function displayHeroes(list) {
