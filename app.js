@@ -1,14 +1,12 @@
-// Charger le JSON
 
+async function loadHeroes() {
+    const res = await fetch("heroes.json");
+    const heroes = await res.json();
+    return heroes;
+}
 
 //  LocalStorage
-function saveToLocalStorage(heroes) {
-    localStorage.setItem("heroes", JSON.stringify(heroes));
-}
 
-function getFromLocalStorage() {
-    return JSON.parse(localStorage.getItem("heroes"));
-}
 
 // Afficher les héros
 function displayHeroes(list) {
@@ -44,6 +42,7 @@ async function init() {
 
     if (!heroes) {
         loader.style.width = "60%";
+        heroes = await loadHeroes();
         saveToLocalStorage(heroes);
     }
 
