@@ -31,7 +31,12 @@ function displayHeroes(list) {
 }
 
 // Supprimer un héros
-
+function deleteHero(id) {
+    let heroes = getFromLocalStorage();
+    heroes = heroes.filter(h => h.id !== id);
+    saveToLocalStorage(heroes);
+    displayHeroes(heroes);
+}
 
 //Barre de chargement
 async function init() {
