@@ -52,8 +52,7 @@ async function init() {
         saveToLocalStorage(heroes);
     }
 
-    loader.style.width = "100%";
-    setTimeout(() => loader.style.display = "none", 500);
+   
 
     displayHeroes(heroes);
 }
