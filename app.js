@@ -59,6 +59,19 @@ async function init() {
 }
 
 // Recherche
+document.getElementById("search").addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+
+    let heroes = getFromLocalStorage();
+    if (!heroes) return; 
+
+    const filtered = heroes.filter(h =>
+        h.name.toLowerCase().includes(query) ||
+        h.power.toLowerCase().includes(query)
+    );
+
+    displayHeroes(filtered);
+});
 
 // Formulaire d'ajout
 document.getElementById("addHeroForm").addEventListener("submit", function (e) {
