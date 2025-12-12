@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Superman", "power": "Force" },
+  { "id": 2, "name": "Batman", "power": "Intelligence" },
+  { "id": 3, "name": "Flash", "power": "Vitesse surhumaine" }
+]

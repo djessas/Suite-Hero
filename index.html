@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heroes-Suite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Gestion des Héros</h1>
+
+    <div id="loader"></div>
+
+    <input type="text" id="search" placeholder="Rechercher un héros...">
+
+    <form id="addHeroForm">
+        <input type="text" id="heroName" placeholder="Nom du héros" required>
+        <input type="text" id="heroPower" placeholder="Pouvoir" required>
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <h2>Liste des héros</h2>
+
+    <div id="heroes"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
