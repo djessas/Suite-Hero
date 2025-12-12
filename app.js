@@ -1,5 +1,9 @@
 // Charger le JSON
-
+async function loadHeroes() {
+    const res = await fetch("heroes.json");
+    const heroes = await res.json();
+    return heroes;
+}
 
 //  LocalStorage
 function saveToLocalStorage(heroes) {
@@ -11,20 +15,8 @@ function getFromLocalStorage() {
 }
 
 // Afficher les héros
-function displayHeroes(list) {
-    const container = document.getElementById("heroes");
-    container.innerHTML = "";
 
-    list.forEach(hero => {
-        container.innerHTML += `
-            <div class="hero">
-                <h3>${hero.name}</h3>
-                <p>${hero.power}</p>
-                <button onclick="deleteHero(${hero.id})">Supprimer</button>
-            </div>
-        `;
-    });
-}
+
 
 // Supprimer un héros
 function deleteHero(id) {
@@ -44,13 +36,14 @@ async function init() {
 
     if (!heroes) {
         loader.style.width = "60%";
+        heroes = await loadHeroes();
         saveToLocalStorage(heroes);
     }
 
     loader.style.width = "100%";
     setTimeout(() => loader.style.display = "none", 500);
 
-    displayHeroes(heroes);
+   
 }
 
 // Recherche
