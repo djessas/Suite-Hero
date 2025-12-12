@@ -1,9 +1,5 @@
+// Charger le JSON
 
-async function loadHeroes() {
-    const res = await fetch("heroes.json");
-    const heroes = await res.json();
-    return heroes;
-}
 
 //  LocalStorage
 
@@ -42,7 +38,6 @@ async function init() {
 
     if (!heroes) {
         loader.style.width = "60%";
-        heroes = await loadHeroes();
         saveToLocalStorage(heroes);
     }
 
